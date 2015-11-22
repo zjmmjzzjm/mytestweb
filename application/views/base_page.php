@@ -12,9 +12,9 @@
     <link href="/static/styles/bootstrap.min.css" rel="stylesheet" />
     <link href="/static/styles/site.css" rel="stylesheet" />
     <link href="/static/styles/buttons.min.css" rel="stylesheet" />
-    <script src="/Static/Scripts/site.js?1203"></script>
+    <script src="/static/scripts/site.js?1203"></script>
 </head>
-<body style="background: url(/Static/xxxxImages/pattern.png) repeat fixed;">
+<body style="background: url(/static/xxxxImages/pattern.png) repeat fixed;">
     <div>
         <div class="header">
             <a href="/">Discover the DHT</a>

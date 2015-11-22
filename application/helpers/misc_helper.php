@@ -1946,6 +1946,7 @@ if(!function_exists('get_auto_unit')) {
 		return '';
 
 	}
+}
 
 // ------------------------------------------------------------------------
 
@@ -1966,16 +1967,16 @@ if(!function_exists('auto_unit_flux')) {
 		switch($unit)
 		{
 		case 'TB':
-			return round($val/(floatval(pow(1024,4)), 2));
+			return round($val/(floatval(pow(1024,4))), 2);
 			break;
 		case 'GB':
-			return round($val/(floatval(pow(1024,3)), 2));
+			return round($val/(floatval(pow(1024,3))), 2);
 			break;
 		case 'MB':
-			return round($val/(floatval(pow(1024,2)), 2));
+			return round($val/(floatval(pow(1024,2))), 2);
 			break;
 		case 'KB':
-			return round($val/(floatval(1024), 2));
+			return round($val/(floatval(1024)), 2);
 			break;
 		case 'B':
 			return $val;

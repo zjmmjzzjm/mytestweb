@@ -13,8 +13,8 @@
     <link href="/static/styles/site.css" rel="stylesheet" />
     <link href="/static/styles/buttons.min.css" rel="stylesheet" />
     <link href="/static/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/Static/Styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <script src="/Static/Scripts/site.js?1203"></script>
+    <link href="/static/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <script src="/static/scripts/site.js?1203"></script>
 </head>
 <body>
     <div class="header_container">
@@ -45,7 +45,7 @@
     </div>
     <div class="content">
         <div>
-    <script src="/Static/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="/static/scripts/jquery-ui-1.9.2.custom.min.js"></script>
     
     <script src="/static/scripts/ZeroClipboard.min.js" type="text/javascript"></script>
 
@@ -77,7 +77,6 @@
         <span style="font-weight: bold;">相关搜索</span>
         <div style="color: #333;">
             <ul class="keywords_list">
-                    <li><span><a href="/search/df5e4d243db855877b91f19d0078a52e">df5e4d243db855877b91f19d0078a52e</a></span></li>
             </ul>
         </div>
     </div>

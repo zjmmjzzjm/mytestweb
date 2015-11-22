@@ -34,27 +34,28 @@ class Mdata extends CI_Model
 		//echo $sql;
 		$q = $this->db->query($sql);
 		$arr = array();
+		$this->load->helper("date");
 		foreach($q->result() as $row)
 		{
 			$infos = explode("\n", $row->info);
 			$i = 0;
-			$size = 0;
+			$size = $this->make_size($row->size);
 			foreach($infos as $info)
 			{
 				$i++;
 				if($i == 1)	
 					continue;
 				$s = explode(" ", $info);
-				$size += end($s);
-
 				
 			}
+			$t = $row->time;
 			$arr[] = array(
 				"title" => $infos[0],
 				"infohash" => $row->hash,
 				"id" => $row->id,
 				"info" =>  $row->info,
 				"size" => $size,
+				"indexdate" => datetime("Y-m-d", $t),
 
 			);
 		}
@@ -109,7 +110,8 @@ class Mdata extends CI_Model
 		$hash = $arr[0]->hash;
 		$infos = explode("\n", $infoall);
 		$i = 0;
-		$total_size = 0;
+		$total_size = $arr[0]->size;
+		$t = $arr[0]->time;
 		$ret = array();
 		$title = "";
 		foreach($infos as $info)
@@ -123,23 +125,35 @@ class Mdata extends CI_Model
 				continue;
 			}
 			$s = explode(" ", $info);
-			$size = end($s);
-			$total_size += $size;
+			$size = $this->make_size(end($s));
 			$content = join(" ", array_slice($s, 0, -1));
 			$ret[] = array(
 				"file" => $content,
 				"size" => $size,
 			);
 		}
+		$this->load->helper("date");
+
 		$data["summary"] =  array(
 			"size" => $total_size,
 			"filenum" => $i-1,
-			"indexdate" => 20141021,
+			"indexdate" => datetime("Y-m-d", $t),
 			"hash" => $hash,
 			"magnet" => "magnet:?xt=urn:btih:$hash&xl=$total_size&dn=$title",
 		);
 		$data["files"] = $ret;
 		return $data;
+	}
+	function make_size($size)
+	{
+		if(is_numeric($size))
+		{
+			$this->load->helper("misc_helper");
+			$unit = get_auto_unit($size);
+			$size = get_num_by_unit($size, $unit).$unit;
+
+		}
+		return $size;
 	}
 	function init_sphinx()
 	{

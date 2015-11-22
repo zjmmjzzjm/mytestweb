@@ -13,8 +13,8 @@
     <link href="/static/styles/site.css" rel="stylesheet" />
     <link href="/static/styles/buttons.min.css" rel="stylesheet" />
     <link href="/static/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/Static/Styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <script src="/Static/Scripts/site.js?1203"></script>
+    <link href="/static/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <script src="/static/scripts/site.js?1203"></script>
 </head>
 <body>
     <div class="header_container">
@@ -61,7 +61,7 @@
             <div class="item_container">
 			<span class="title_span"><a href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo $data['title'];?></a></span>
 			<span class="size_span"><?php echo $data['size']; ?></span>
-                <span class="included_date_span">2015-09-29</span>
+			<span class="included_date_span"><?php echo $data['indexdate'];?></span>
                 <a href="/index.php/detail/<?php echo $data['id'];?>" ><input type="button" value="详细" class="button button-tiny" style="margin-left: 8px; width: 60px; height: 25px; padding-left: 0px; padding-right: 0px;" /></a>
             </div>
             <hr class="item_separator" />
