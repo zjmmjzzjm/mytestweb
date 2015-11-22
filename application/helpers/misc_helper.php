@@ -1913,6 +1913,84 @@ if(!function_exists('human_unit_flux')) {
 // ------------------------------------------------------------------------
 
 /**
+ * 自动检测数值并设置单位，自动设置单位B,KB，MB，GB等的
+ *
+ * @param               $arr            array               数据源
+ * @param               $unit           string              单位
+ * @param               $units          array               单位列表
+ * @param               $base           integer             单位基数
+ * @return                              array|false
+ */
+if(!function_exists('get_auto_unit')) {
+	function get_auto_unit($val ) 
+	{
+		if(!is_numeric($val))
+		{
+			return '';
+		}
+		if($val >= 1024*1024*1024*1024)
+			return "TB";
+
+		if($val >= 1024*1024*1024)
+			return "GB";
+
+		if($val >= 1024*1024)
+			return "MB";
+
+		if($val >= 1024)
+			return "KB";
+
+		if($val >= 0)
+			return "B";
+
+		return '';
+
+	}
+
+// ------------------------------------------------------------------------
+
+/**
+ * 将数值转化成易读形式，自动设置单位B,KB，MB，GB等的
+ *
+ * @param               $arr            array               数据源
+ * @param               $unit           string              单位
+ * @param               $units          array               单位列表
+ * @param               $base           integer             单位基数
+ * @return                              array|false
+ */
+if(!function_exists('auto_unit_flux')) {
+	function get_num_by_unit($val, $unit) 
+	{
+		if(!is_numeric($val))
+			return $val;
+		switch($unit)
+		{
+		case 'TB':
+			return round($val/(floatval(pow(1024,4)), 2));
+			break;
+		case 'GB':
+			return round($val/(floatval(pow(1024,3)), 2));
+			break;
+		case 'MB':
+			return round($val/(floatval(pow(1024,2)), 2));
+			break;
+		case 'KB':
+			return round($val/(floatval(1024), 2));
+			break;
+		case 'B':
+			return $val;
+			break;
+		default:
+			return $val;
+			break;
+			
+		}
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
 * Error Handler
 *
 * This function lets us invoke the exception class and
