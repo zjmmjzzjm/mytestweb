@@ -26,22 +26,17 @@ class Mdata extends CI_Model
 		$res = $this->sphinx_query($key, "*", $page);
 		if($res == NULL)
 			return NULL;
-		$where = "";
+		$where = array();
 
 		foreach($res["matches"] as $match)
 		{
-			if($where != "")
-			{
-				$where .= " or id=".$match['id'];
-			}
-			else
-			{
-				$where = "id=".$match['id'];
-			}
+			$where[] = $match['id'];
 		}
-		$sql = "select * from hash_info where " . $where;
+
+		//$sql = "select * from hash_info where " . $where;
 		//echo $sql;
-		$q = $this->db->query($sql);
+		$this->db->where_in('id', $where);
+		$q = $this->db->get('hash_info');
 		$arr = array();
 		$this->load->helper("date");
 		foreach($q->result() as $row)
@@ -107,9 +102,14 @@ class Mdata extends CI_Model
 	function detail_data($id)
 	{
 		
-		$sql = "select * from hash_info where id=" . $this->encryption->decrypt(urldecode($id)) ;
+		$real_id = $this->encryption->decrypt(urldecode($id));
+		if( !$real_id )
+			return NULL;
+		//$sql = "select * from hash_info where id=" . $real_id) ;
 		//echo $sql;
-		$q = $this->db->query($sql);
+		//$q = $this->db->query($sql);
+
+		$q = $this->db->get_where('hash_info', array('id'=>$real_id), 1);
 		$arr = $q->result();
 		if(count($arr) <= 0)
 		{
