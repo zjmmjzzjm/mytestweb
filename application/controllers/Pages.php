@@ -88,9 +88,16 @@
 
 			$this->load->model('mdata');
 			$data = $this->mdata->detail_data($id);
-			$data["title"] = "btmilk";
-			$this->load->view("detail_view", $data);
-			$this->load->view('footer', $data);
+			if($data != NULL)
+			{
+				$data["title"] = $data['summary']['title'];
+				$this->load->view("detail_view", $data);
+				$this->load->view('footer', $data);
+			}
+			else
+			{
+
+			}
 		}
 		public function test()
 		{

@@ -144,6 +144,7 @@ class Mdata extends CI_Model
 		$this->load->helper("date");
 
 		$data["summary"] =  array(
+			"title" => $title,
 			"size" => $total_size,
 			"filenum" => $i-1,
 			"indexdate" => datetime("Y-m-d", $t),

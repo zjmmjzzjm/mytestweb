@@ -30,7 +30,7 @@
 				<form action="/index.php/" method="get" id="search_form_h" style="height: 80px;">
 					<div>
 						<input type="text" name="keyword" id="keyword" class="search_box" style="height: 35px; width: 400px;" />
-						<input type="submit" value="commit" class="search_button" style="height: 35px; width: 100px;" />
+						<input type="submit" value="搜索" class="search_button" style="height: 35px; width: 100px;" />
 					</div>
 				</form>
 			</div>

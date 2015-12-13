@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit" />
     <meta name="keywords" content="btmilk, magnet link, torrent, magnet search, torrent search engine" />
     <meta name="description" content="This is a powerful Magnet Link search engine that helps you discovery the DHT network." />
-    <title>f - The Magnet Link Search Engine</title>
+	<title><?php echo urldecode($title) ?> - 搜索结果</title>
     <script src="/static/scripts/jquery.min.js"></script>
     <link href="/static/styles/bootstrap.min.css" rel="stylesheet" />
     <link href="/static/styles/site.css" rel="stylesheet" />
@@ -15,6 +15,7 @@
     <link href="/static/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/static/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <script src="/static/scripts/site.js?1203"></script>
+    <script src="/static/scripts/jquery.twbsPagination.min.js"></script>
 </head>
 <body>
     <div class="header_container">
@@ -71,7 +72,6 @@
     <div style="text-align: center;">
         <ul id="pagination" class="pagination-sm"></ul>
     </div>
-    <script src="/static/scripts/jquery.twbsPagination.min.js"></script>
     <script type="text/javascript">
 	$("#pagination").twbsPagination({
 		totalPages: <?php echo $total_page; ?>,
@@ -86,24 +86,7 @@
 			});
         $("#keyword").select();
     </script>
+	</div>
 </div>
-    </div>
-    <div class="footer_container">
-        <div class="footer">
-    <div style="width: 340px; float: left; text-align: center; padding-top: 5px;">
-        <img src="/static/images/symantec.png" alt="Symantec" />
-    </div>
-</div>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?a91a434984101618d7b364a629b31df0";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-
- })();
-</script>;
-    </div>
 </body>
 </html>
