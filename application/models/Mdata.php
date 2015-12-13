@@ -8,8 +8,17 @@ class Mdata extends CI_Model
 	function Mdata()
 	{
 		parent::__construct();
+		$this->load->library('encryption');
 		$this->load->database();
 		$this->init_sphinx();
+		$this->encryption->initialize(
+			array(
+				'cipher' => 'rc4',
+				'mode' => 'stream',
+				'hmac' => False,
+				'key' => 'V1243509786',
+			)
+		);
 	}
 	function search($key, $page)
 	{
@@ -52,7 +61,7 @@ class Mdata extends CI_Model
 			$arr[] = array(
 				"title" => $infos[0],
 				"infohash" => $row->hash,
-				"id" => $row->id,
+				"id" => urlencode($this->encryption->encrypt($row->id)),
 				"info" =>  $row->info,
 				"size" => $size,
 				"indexdate" => datetime("Y-m-d", $t),
@@ -98,7 +107,7 @@ class Mdata extends CI_Model
 	function detail_data($id)
 	{
 		
-		$sql = "select * from hash_info where id=" . $id ;
+		$sql = "select * from hash_info where id=" . $this->encryption->decrypt(urldecode($id)) ;
 		//echo $sql;
 		$q = $this->db->query($sql);
 		$arr = $q->result();
