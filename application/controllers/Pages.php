@@ -49,14 +49,25 @@
 			}
 			$this->load->model('mdata');
 			$data = $this->mdata->search($key, $page);
-			$data['title'] = $key;
-			$data['page'] = $page;
 /*			echo "<pre>";
 			var_dump($data["datas"]);
 			echo "</pre>";
  */
-			 $this->load->view('list_view', $data);
-			 $this->load->view('footer', $data);
+			if($data != NULL)
+			{
+				$data['title'] = $key;
+				$data['page'] = $page;
+				 $this->load->view('list_view', $data);
+				 $this->load->view('footer', $data);
+			}
+			else
+			{
+				$data = array(
+					'key' => $key,
+					'title'=>$key,
+				);
+				$this->load->view('error_view', $data);
+			}
 		}
 	
 		public function detail($id= "")
@@ -96,7 +107,7 @@
 			}
 			else
 			{
-
+				$this->load->view('error_view', $data);
 			}
 		}
 		public function test()

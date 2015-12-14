@@ -36,7 +36,7 @@
                             return false;
                         
 						}
-                        window.location = "index.php/search/" + encodeURIComponent(q.trim());
+                        window.location.pathname = "/index.php/search/" + encodeURIComponent(q.trim());
                         return false;
                     
 							});
