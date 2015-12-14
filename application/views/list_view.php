@@ -21,7 +21,7 @@
     <div class="header_container">
         <div class="header">
             <form action="/search" method="get" id="search_form" style="height: 80px;">
-                <a href="/">Discover the DHT</a>
+                <a href="/">探索DHT网络</a>
                     <div style="float: right;">
 					<input type="text" name="keyword" id="keyword" value="<?php echo $key; ?>" class="search_box" />
                         <input type="submit" value="搜索" class="search_button" />

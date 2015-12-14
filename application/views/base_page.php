@@ -7,7 +7,7 @@
 	<meta name="renderer" content="webkit" />
 	<meta name="description" content="This is a powerful Magnet Link search engine that helps you discovery the DHT network." />
 	<meta name="keywords" content="btmilk, magnet link, torrent, magnet search, torrent search engine" />
-	<title>Magnet Link Search Engine</title>
+	<title>欢迎使用奶茶磁力链接搜索引擎</title>
 	<script src="/static/scripts/jquery.min.js"></script>
 	<link href="/static/styles/bootstrap.min.css" rel="stylesheet" />
 	<link href="/static/styles/site.css" rel="stylesheet" />
@@ -16,8 +16,8 @@
 </head>
 <body style="background: url(/static/xxxxImages/pattern.png) repeat fixed;">
 	<div>
-		<div class="header">
-			<a href="/">Discover the DHT</a>
+		<div "header">
+			<a href="/"></a>
 		</div>
 	</div>
 
@@ -25,7 +25,7 @@
 		<div>
 			<div style="text-align: center; margin-top: 100px;">
 				<div>
-					<h3><span style="color: #FFF; font-size: 16px;">Discover the DHT Network.</span></h3>
+					<h3><span style="color: #000; font-size: 16px;">一起体验DHT网络探索之旅吧！</span></h3>
 				</div>
 				<form action="/index.php/" method="get" id="search_form_h" style="height: 80px;">
 					<div>
