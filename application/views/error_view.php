@@ -21,7 +21,7 @@
     <div class="header_container">
         <div class="header">
             <form action="index.php/search" method="get" id="search_form" style="height: 80px;">
-                <a href="/">Home Page</a>
+                <a href="/">探索DHT网络</a>
                     <div style="float: right;">
                         <input type="text" name="keyword" id="keyword" class="search_box" />
                         <input type="submit" value="搜索" class="search_button" />
@@ -36,7 +36,7 @@
                             $("#keyword").focus();
                             return false;
 						}
-                        window.location.pathname = "/index.php/search/" + encodeURIComponent(q.trim());
+                        window.location.pathname = "/index.php/search/" + q.trim();
                         return false;
                     
 							});
