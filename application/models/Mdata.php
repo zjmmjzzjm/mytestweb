@@ -4,6 +4,7 @@ require ( "sphinxapi.php" );
 class Mdata extends CI_Model
 {
 	private $cl;//sphinx client
+	private $keyword;
 
 	function Mdata()
 	{
@@ -23,6 +24,7 @@ class Mdata extends CI_Model
 	function search($key, $page)
 	{
 		$key = urldecode($key);
+		$this->keyword = $key;
 		$res = $this->sphinx_query($key, "*", $page);
 		if($res == NULL)
 			return NULL;
@@ -198,9 +200,34 @@ class Mdata extends CI_Model
 		if ( $select )				$this->cl->SetSelect ( $select );
 		if ( $limit )				$this->cl->SetLimits ( 0, $limit, ( $limit>1000 ) ? $limit : 1000 );
 		$this->cl->SetRankingMode ( $ranker );
+	}
+	function do_statistics()
+	{
+		$tbl = $this->get_statistic_table();
+		$sql = "CREATE TABLE IF NOT EXIST  `$tbl`
+			(
+				`id`  int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+				`time` int UNSIGNED NOT NULL,
+				`ip`  char(20) NOT NULL ,
+				`keyword` char(40) NOT NULL ,
+				`session`  char(80) NOT NULL,
+                PRIMARY KEY (`id`) 
+            ) ENGINE=MyISAM  DEFAULT CHARSET=utf8";
+		$data = array(
+			'time' => time(),
+			'ip' =>  $this->input->ip_adress(),
+			'keyword' => $this->keyword,
+			'session' => '0000',
+		);
+		$this->db->insert($tbl, $data);
 
+	}
 
-
+	function get_statistic_table()
+	{
+		$date  = date('Ymd');
+		echo $date;
+		return "statistic_$date";
 	}
 
 }
