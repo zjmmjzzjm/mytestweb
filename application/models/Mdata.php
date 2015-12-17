@@ -6,6 +6,7 @@ class Mdata extends CI_Model
 {
 	private $cl;//sphinx client
 	private $keyword;
+	private $find_count;
 	private $coder;
 
 	function Mdata()
@@ -15,6 +16,8 @@ class Mdata extends CI_Model
 		$this->init_sphinx();
 		$this->key = 345678.1;
 		$this->coder = new XDecode(16, $this->key);
+		$this->find_count = 0;
+		$this->keyword = "";
 	}
 	function search($key, $page)
 	{
@@ -61,6 +64,7 @@ class Mdata extends CI_Model
 			);
 		}
 		$totalPages =  intval($res["total_found"] / 20);
+		$this->find_count = $res["total_found"];
 		if($totalPages > 50)
 		{
 			$totalPages = 50;
@@ -77,6 +81,7 @@ class Mdata extends CI_Model
 		var_dump($arr);
 		echo "</pre>";
 		 */
+		$this->do_statistics();
 		return $data;
 		
 
@@ -199,21 +204,25 @@ class Mdata extends CI_Model
 	function do_statistics()
 	{
 		$tbl = $this->get_statistic_table();
-		$sql = "CREATE TABLE IF NOT EXIST  `$tbl`
+		$sql = "CREATE TABLE IF NOT EXISTS  `$tbl`
 			(
 				`id`  int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 				`time` int UNSIGNED NOT NULL,
 				`ip`  char(20) NOT NULL ,
 				`keyword` char(40) NOT NULL ,
 				`session`  char(80) NOT NULL,
+				`find` int(11) UNSIGNED NOT NULL,
                 PRIMARY KEY (`id`) 
             ) ENGINE=MyISAM  DEFAULT CHARSET=utf8";
+		$this->db->query($sql);
 		$data = array(
 			'time' => time(),
-			'ip' =>  $this->input->ip_adress(),
+			'ip' =>  $this->input->ip_address(),
 			'keyword' => $this->keyword,
 			'session' => '0000',
+			'find' => $this->find_count,
 		);
+
 		$this->db->insert($tbl, $data);
 
 	}
@@ -221,7 +230,6 @@ class Mdata extends CI_Model
 	function get_statistic_table()
 	{
 		$date  = date('Ymd');
-		echo $date;
 		return "statistic_$date";
 	}
 
