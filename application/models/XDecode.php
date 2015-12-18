@@ -35,8 +35,11 @@ class XDecode{
     $begin = substr($this->codelen,$numslen - 1,1);
     //密文的扩展位
     $extlen = $this->length - $numslen - 1;
-    $temp = str_replace('.', '', $nums / $this->key);
+	
+    $temp = str_replace('.', '', $nums * $this->key);
     $temp = substr($temp,-$extlen);
+
+
     $arrextTemp = str_split($this->codeext);
     $arrext = str_split($temp);
     foreach ($arrext as $v) {
