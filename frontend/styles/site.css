@@ -1,0 +1,149 @@
+﻿body {
+    margin: 0;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    margin: 0 auto;
+    width: 900px;
+    padding-top: 100px;
+}
+
+.header {
+    width: 900px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.footer {
+    width: 900px;
+    height: 120px;
+    margin: 0 auto;
+    font-size: 12px;
+    font-family: "sans-serif";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+    .footer a {
+        color: #FFFFFF;
+    }
+
+.header_container {
+    background: url(/static/images/pattern.png) repeat fixed;
+    height: 80px;
+    box-shadow: 0 0 10px #333;
+    position: fixed;
+    margin-top: 0px;
+    z-index: 999;
+    width: 100%;
+}
+
+.footer_container {
+    background: url(/static/images/pattern.png) repeat fixed;
+    padding-top: 20px;
+}
+
+.title {
+    font-family: Consolas;
+    font-size: 22px;
+    font-weight: normal;
+    color: #FFF;
+    line-height: 80px;
+    vertical-align: central;
+}
+
+.search_box {
+    border: #333 1px solid;
+    height: 28px;
+    width: 280px;
+    padding-left: 10px;
+    margin-top: 25px;
+}
+
+.search_button {
+    height: 28px;
+    border: 0px solid #CCCCCC;
+    background: #1b9af7;
+    color: #FFFFFF;
+    font-weight: normal;
+    width: 80px;
+}
+
+.logo {
+    margin-top: 15px;
+}
+
+.item_container {
+    width: 900px;
+    margin-top: 0px;
+}
+
+.item_separator {
+    height: 0px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.highlight {
+    color: red;
+}
+
+.title_span {
+    width: 650px;
+    display: inline-block;
+    word-break: break-all;
+    margin-left: 5px;
+}
+
+    .title_span a {
+        color: #333333;
+    }
+
+.size_span {
+    width: 80px;
+    display: inline-block;
+}
+
+.included_date_span {
+    width: 80px;
+    display: inline-block;
+}
+
+.torrent_title {
+    margin: 10px 0px 0px 0px;
+    font-size: 22px;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.share_icon img {
+    height: 32px;
+    width: 32px;
+}
+
+.keywords_list {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+    .keywords_list li {
+        list-style: none;
+        float: left;
+        margin-left: 10px;
+    }
+
+        .keywords_list li a {
+            color: #555;
+        }
+
+            .keywords_list li a:hover {
+                color: #000;
+                text-decoration: none;
+            }

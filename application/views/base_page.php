@@ -24,9 +24,12 @@
 	<div class="content">
 		<div>
 			<div style="text-align: center; margin-top: 100px;">
-				<div>
-					<h3><span style="color: #000; font-size: 16px;">一起体验DHT网络探索之旅吧！</span></h3>
-				</div>
+				<DIV style=" margin-left: -30px;">
+					<img src="/static/images/titlePg.png"> 
+				</DIV>
+				<DIV>
+					<H3><SPAN style="margin-left: -17px;color: rgb(0, 0, 0); font-size: 16px;">全国最全最好的资源搜索引擎网站</SPAN></H3>
+				</DIV>
 				<form action="/index.php/" method="get" id="search_form_h" style="height: 80px;">
 					<div>
 						<input type="text" name="keyword" id="keyword" class="search_box" style="height: 35px; width: 400px;" />
