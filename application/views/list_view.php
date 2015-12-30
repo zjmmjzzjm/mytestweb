@@ -10,6 +10,7 @@
 	<title><?php echo urldecode($title) ?> - 搜索结果</title>
     <script src="/static/scripts/jquery.min.js"></script>
     <link href="/static/styles/bootstrap.min.css" rel="stylesheet" />
+     <LINK href="/static/styles/default.css" rel="stylesheet" type="text/css">    
     <link href="/static/styles/site.css" rel="stylesheet" />
     <link href="/static/styles/buttons.min.css" rel="stylesheet" />
     <link href="/static/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -50,23 +51,30 @@
         <div style="margin-bottom: 10px;">
 		<span style="color: #888888;">在<?php echo $time; ?>内找到约 <?php echo $total_found; ?> 条记录匹配关键词 &quot;<?php echo $key; ?>&quot;.</span>
         </div>
-        <div class="item_container">
-            <span class="title_span"><strong>标题</strong></span>
-            <span class="size_span"><strong>大小</strong></span>
-            <span class="included_date_span"><strong>索引日期</strong></span>
-            <hr class="item_separator" />
-        </div>
 			<?php foreach( $datas as $data ) 
 						{
 ?>
-            <div class="item_container">
-			<span class="title_span"><a href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo $data['title'];?></a></span>
-			<span class="size_span"><?php echo $data['size']; ?></span>
-			<span class="included_date_span"><?php echo $data['indexdate'];?></span>
-                <a href="/index.php/detail/<?php echo $data['id'];?>" ><input type="button" value="详细" class="button button-tiny" style="margin-left: 8px; width: 60px; height: 25px; padding-left: 0px; padding-right: 0px;" /></a>
-            </div>
-            <hr class="item_separator" />
-<?php } ?>
+
+	<DIV class="search-item">
+	<DIV class="item-title">
+		<H3><A href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo $data['title'] ?></A>                 
+		</H3>
+	</DIV>
+	<DIV class="item-list">
+		<UL>
+		  <LI><?php echo $data['title'] ?><SPAN class="lightColor"><?php echo $data['size'] ?></SPAN>
+		  </LI>
+		</UL>
+	</DIV>
+		  
+	  
+	<DIV class="item-bar"><SPAN class="cpill fileType1">视频</SPAN><SPAN>创建时间：<B>1年前</B></SPAN><SPAN>文件大小:<B><?php echo $data['size'] ?></B> </SPAN><SPAN>下载热度：<B>12</B></SPAN>              
+	   <SPAN>最近下载：<B>1年前</B></SPAN>                 <A class="download" href="<?php echo $data['magnet'] ?>">磁力链接</A> 
+	<A class="download" href="thunder://QUFtYWduZXQ6P3h0PXVybjpidGloOjQ2NTQzMDA4MjJBRDRCNDlDQzhCN0I3NEYyMTBEMkNBNjg2QzQ3QjBaWg==/">迅雷链接</A> 
+	 </DIV>
+	</DIV>
+
+	<?php } ?>
     </div>
 
     <div style="text-align: center;">

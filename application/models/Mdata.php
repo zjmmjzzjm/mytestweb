@@ -53,13 +53,17 @@ class Mdata extends CI_Model
 				
 			}
 			$t = $row->time;
+			$hash =  $row->hash;
+			$title = $infos[0];
 			$arr[] = array(
 				"title" => $infos[0],
 				"infohash" => $row->hash,
 				"id" => $this->coder->encode($row->id),
-				"info" =>  $row->info,
+				"info" =>  $hash,
 				"size" => $size,
+				"magnet" => "magnet:?xt=urn:btih:$hash&dn=$title",
 				"indexdate" => datetime("Y-m-d", $t),
+
 
 			);
 		}
