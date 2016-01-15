@@ -130,10 +130,20 @@ if(!function_exists('guess_file_type')) {
 			".iso" => "压缩文件",
 			".gz" => "压缩文件",
 			".tgz" => "压缩文件",
+
+			".jpg" => "图片",
+			".png" => "图片",
+			".bmp" => "图片",
+			".gif" => "图片",
+			".tga" => "图片",
 		);
 
 		$ext =get_extension($file);
-		if(array_key_exists($ext, $res))
+		if($ext === FALSE)
+		{
+
+		}
+		else if(array_key_exists($ext, $res))
 			return $res[$ext];
 		return "未知文件";
 		
@@ -152,6 +162,7 @@ if(!function_exists('guess_torrent_type')) {
 			"文档" => 0,
 			"压缩文件"=>0,
 			"程序"=>0,
+			"图片" => 0,
 			"未知文件"=>0,
 		);
 		foreach($files as $f)
@@ -168,6 +179,9 @@ if(!function_exists('guess_torrent_type')) {
 			return "程序";
 		if($res["压缩文件"] > 0)
 			return "压缩文件";
+
+		if($res["图片"] > 10)
+			return "图片";
 		if($res["文档"] > 0)
 			return "文档";
 		return  "未知文件";
