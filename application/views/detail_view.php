@@ -8,13 +8,13 @@
     <meta name="keywords" content="btmilk, magnet link, torrent, magnet search, torrent search engine" />
     <meta name="description" content="This is a powerful Magnet Link search engine that helps you discovery the DHT network." />
 	<title><?php echo $title; ?> - The Magnet Link Search Engine</title>
-    <script src="/static/scripts/jquery.min.js"></script>
-    <link href="/static/styles/bootstrap.min.css" rel="stylesheet" />
-    <link href="/static/styles/site.css" rel="stylesheet" />
-    <link href="/static/styles/buttons.min.css" rel="stylesheet" />
-    <link href="/static/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/static/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <script src="/static/scripts/site.js?1203"></script>
+    <script src="/frontend/scripts/jquery.min.js"></script>
+    <link href="/frontend/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/frontend/styles/site.css" rel="stylesheet" />
+    <link href="/frontend/styles/buttons.min.css" rel="stylesheet" />
+    <link href="/frontend/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/frontend/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <script src="/frontend/scripts/site.js?1203"></script>
 </head>
 <body>
     <div class="header_container">
@@ -45,9 +45,9 @@
     </div>
     <div class="content">
         <div>
-    <script src="/static/scripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="/frontend/scripts/jquery-ui-1.9.2.custom.min.js"></script>
     
-    <script src="/static/scripts/ZeroClipboard.min.js" type="text/javascript"></script>
+    <script src="/frontend/scripts/ZeroClipboard.min.js" type="text/javascript"></script>
 
 <h1 class="torrent_title"><?php echo $title ?></h1>
 
@@ -60,7 +60,7 @@
         <div style="margin: 0 auto; width: 700px;">
             <canvas id="requestChart" height="100"></canvas>
         </div>
-        <script src="/static/scripts/chart.min.js" type="text/javascript"></script>
+        <script src="/frontend/scripts/chart.min.js" type="text/javascript"></script>
     </div>
 
     <div style="margin-top: 5px; margin-bottom: 20px; text-align: center;">

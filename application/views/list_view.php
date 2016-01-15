@@ -8,15 +8,15 @@
     <meta name="keywords" content="btmilk, magnet link, torrent, magnet search, torrent search engine" />
     <meta name="description" content="This is a powerful Magnet Link search engine that helps you discovery the DHT network." />
 	<title><?php echo urldecode($title) ?> - 搜索结果</title>
-    <script src="/static/scripts/jquery.min.js"></script>
-    <link href="/static/styles/bootstrap.min.css" rel="stylesheet" />
-     <LINK href="/static/styles/default.css" rel="stylesheet" type="text/css">    
-    <link href="/static/styles/site.css" rel="stylesheet" />
-    <link href="/static/styles/buttons.min.css" rel="stylesheet" />
-    <link href="/static/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/static/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <script src="/static/scripts/site.js?1203"></script>
-    <script src="/static/scripts/jquery.twbsPagination.min.js"></script>
+    <script src="/frontend/scripts/jquery.min.js"></script>
+    <link href="/frontend/styles/bootstrap.min.css" rel="stylesheet" />
+     <LINK href="/frontend/styles/default.css" rel="stylesheet" type="text/css">    
+    <link href="/frontend/styles/site.css" rel="stylesheet" />
+    <link href="/frontend/styles/buttons.min.css" rel="stylesheet" />
+    <link href="/frontend/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/frontend/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <script src="/frontend/scripts/site.js?1203"></script>
+    <script src="/frontend/scripts/jquery.twbsPagination.min.js"></script>
 </head>
 <body>
     <div class="header_container">

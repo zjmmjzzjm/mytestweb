@@ -8,13 +8,13 @@
 	<meta name="description" content="This is a powerful Magnet Link search engine that helps you discovery the DHT network." />
 	<meta name="keywords" content="btmilk, magnet link, torrent, magnet search, torrent search engine" />
 	<title>欢迎使用奶茶磁力链接搜索引擎</title>
-	<script src="/static/scripts/jquery.min.js"></script>
-	<link href="/static/styles/bootstrap.min.css" rel="stylesheet" />
-	<link href="/static/styles/site.css" rel="stylesheet" />
-	<link href="/static/styles/buttons.min.css" rel="stylesheet" />
-	<script src="/static/scripts/site.js?1203"></script>
+	<script src="/frontend/scripts/jquery.min.js"></script>
+	<link href="/frontend/styles/bootstrap.min.css" rel="stylesheet" />
+	<link href="/frontend/styles/site.css" rel="stylesheet" />
+	<link href="/frontend/styles/buttons.min.css" rel="stylesheet" />
+	<script src="/frontend/scripts/site.js?1203"></script>
 </head>
-<body style="background: url(/static/xxxxImages/pattern.png) repeat fixed;">
+<body style="background: url(/frontend/xxxxImages/pattern.png) repeat fixed;">
 	<div>
 		<div "header">
 			<a href="/"></a>
@@ -25,7 +25,7 @@
 		<div>
 			<div style="text-align: center; margin-top: 100px;">
 				<DIV style=" margin-left: -30px;">
-					<img src="/static/images/titlePg.png"> 
+					<img src="/frontend/images/titlePg.png"> 
 				</DIV>
 				<DIV>
 					<H3><SPAN style="margin-left: -17px;color: rgb(0, 0, 0); font-size: 16px;">全国最全最好的资源搜索引擎网站</SPAN></H3>
