@@ -199,16 +199,6 @@ open: function (event, ui) {
 </div>
     </div>
 <div class="footer_container">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?a91a434984101618d7b364a629b31df0";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-
- })();
-</script>;
 </div>
 </body>
 </html>

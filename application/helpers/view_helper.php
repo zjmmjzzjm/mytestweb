@@ -64,7 +64,7 @@ if(!function_exists('get_extension')) {
 		if($pos === FALSE)
 			return FALSE;
 
-		return substr($file, $pos); 
+		return strtolower(substr($file, $pos)); 
 	} 
 }
 
@@ -80,11 +80,28 @@ if(!function_exists('guess_file_type')) {
 			".mkv"=>"视频",
 			".avi" => "视频",
 			".rm" => "视频",
+			".mp4" => "视频",
+			".mpeg" => "视频",
+			".mpg" => "视频",
+			".mov" => "视频",
+			".wmv" => "视频",
+			".3gp" => "视频",
+			".asf" => "视频",
+			".flv" => "视频",
+			".mpe" => "视频",
+			".vob" => "视频",
 
 			".mp3" => "音频",
+			".mid" => "音频",
+			".ape" => "音频",
+			".cda" => "音频",
+			".au" => "音频",
+			".mac" => "音频",
+			".aac" => "音频",
 			".wma" => "音频",
 			".ogg" => "音频",
 			".wav" => "音频",
+
 
 			".pdf" => "文档",
 			".doc" => "文档",
@@ -100,6 +117,11 @@ if(!function_exists('guess_file_type')) {
 			".lib" => "程序",
 			".msi" => "程序",
 			".dmg" => "程序",
+			".bat" => "程序",
+			".sh" => "程序",
+			".py" => "程序",
+			".js" => "程序",
+			".php" => "程序",
 
 			".zip" => "压缩文件",
 			".bz2" => "压缩文件",
