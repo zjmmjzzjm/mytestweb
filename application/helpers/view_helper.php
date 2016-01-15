@@ -160,7 +160,7 @@ if(!function_exists('guess_torrent_type')) {
 			$res[guess_file_type($fn)]++;
 		}
 
-		if($res["视频"] > 0)
+		if($res["视频"] > 0 && $res['视频'] + 5 > $res['音频'] )
 			return "视频";
 		if($res["音频"] > 0)
 			return "音频";
