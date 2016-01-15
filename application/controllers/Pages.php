@@ -57,8 +57,9 @@
 			{
 				$data['title'] = $key;
 				$data['page'] = $page;
-				 $this->load->view('list_view', $data);
-				 $this->load->view('footer', $data);
+				$this->load->helper('view_helper');
+				$this->load->view('list_view', $data);
+				$this->load->view('footer', $data);
 			}
 			else
 			{
@@ -102,6 +103,7 @@
 			if($data != NULL)
 			{
 				$data["title"] = $data['summary']['title'];
+				$this->load->helper('view_helper');
 				$this->load->view("detail_view", $data);
 				$this->load->view('footer', $data);
 			}

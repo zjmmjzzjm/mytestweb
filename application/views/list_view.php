@@ -28,73 +28,82 @@
                         <input type="submit" value="搜索" class="search_button" />
                     </div>
             </form>
-                <script type="text/javascript">
-                    $("#keyword").focus();
-					$("#search_form").submit(function (e) {
-                        e.preventDefault();
-                        var q = $("#keyword").val();
-						if (!q || q.trim() == '') {
-                            $("#keyword").focus();
-                            return false;
-                        
-						}
-                        window.location = "/index.php/search/" + encodeURIComponent(q.trim());
-                        return false;
-                    
-							});
-                </script> 
-        </div>
-    </div>
-    <div class="content">
-        <div>
-    <div>
-        <div style="margin-bottom: 10px;">
-		<span style="color: #888888;">在<?php echo $time; ?>内找到约 <?php echo $total_found; ?> 条记录匹配关键词 &quot;<?php echo $key; ?>&quot;.</span>
-        </div>
-			<?php foreach( $datas as $data ) 
-						{
-?>
-
-	<DIV class="search-item">
-	<DIV class="item-title">
-		<H3><A href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo $data['title'] ?></A>                 
-		</H3>
-	</DIV>
-	<DIV class="item-list">
-		<UL>
-		  <LI><?php echo $data['title'] ?><SPAN class="lightColor"><?php echo $data['size'] ?></SPAN>
-		  </LI>
-		</UL>
-	</DIV>
-		  
-	  
-	<DIV class="item-bar"><SPAN class="cpill fileType1">视频</SPAN><SPAN>创建时间：<B>1年前</B></SPAN><SPAN>文件大小:<B><?php echo $data['size'] ?></B> </SPAN><SPAN>下载热度：<B>12</B></SPAN>              
-	   <SPAN>最近下载：<B>1年前</B></SPAN>                 <A class="download" href="<?php echo $data['magnet'] ?>">磁力链接</A> 
-	<A class="download" href="thunder://QUFtYWduZXQ6P3h0PXVybjpidGloOjQ2NTQzMDA4MjJBRDRCNDlDQzhCN0I3NEYyMTBEMkNBNjg2QzQ3QjBaWg==/">迅雷链接</A> 
-	 </DIV>
-	</DIV>
-
-	<?php } ?>
-    </div>
-
-    <div style="text-align: center;">
-        <ul id="pagination" class="pagination-sm"></ul>
-    </div>
-    <script type="text/javascript">
-	$("#pagination").twbsPagination({
-		totalPages: <?php echo $total_page; ?>,
-                visiblePages: 10,
-				startPage: <?php echo $page; ?>,
-				href: "?page={{number}}",
-                first: '首页',
-                prev: '上一页',
-                next: '下一页',
-                last: '最后一页'
-        
-			});
-        $("#keyword").select();
-    </script>
+			<script type="text/javascript">
+				$("#keyword").focus();
+				$("#search_form").submit(function (e) {
+					e.preventDefault();
+					var q = $("#keyword").val();
+					if (!q || q.trim() == '') {
+						$("#keyword").focus();
+						return false;
+					
+					}
+					window.location = "/index.php/search/" + encodeURIComponent(q.trim());
+					return false;
+				
+						});
+			</script> 
+		</div>
 	</div>
-</div>
+    <div class="content">
+		<div>
+			<div>
+				<div style="margin-bottom: 10px;">
+				<span style="color: #888888;">在<?php echo $time; ?>内找到约 <?php echo $total_found; ?> 条记录匹配关键词 &quot;<?php echo $key; ?>&quot;.</span>
+				</div>
+				<?php foreach( $datas as $data ) 
+				{ ?>
+
+				<div class="search-item">
+				<div class="item-title">
+					<h3><a href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo highlight_keywords($data['title'], $words) ?></a>                 </h3>
+				</div>
+				<div class="item-list">
+					<ul>
+					<?php $showcnt=0;$isfind_highlight = false; foreach($data['detail']['files'] as $f) 
+					{  $retstr = highlight_keywords($f['file'], $words); 
+						if($showcnt > 2)
+							break;
+						if($retstr != $f['file'])
+						{
+							$isfind_highlight = true;
+						}
+						if($isfind_highlight)
+						{
+						  echo "<li>".$retstr."<span class=\"lightColor\">".$f['size']."</span></li>";
+						  $showcnt++;
+						}
+					}?>
+					</ul>
+				</div>
+				<div class="item-bar">
+					<span class="cpill fileType1"><?php echo  guess_torrent_type($data['detail']['files'])?></span>
+					<span>创建时间：<b><?php echo $data['indexdate'] ?></b></span>
+					<span>文件大小:<b><?php echo $data['size'] ?></b> </span>
+					<span>下载热度：<b>1</b></span>              
+					<span>最近下载：<b>1</b></span>                 
+				 </div>
+				</div>
+				<?php } ?>
+			</div>
+			<div style="text-align: center;">
+				<ul id="pagination" class="pagination-sm"></ul>
+			</div>
+			<script type="text/javascript">
+			$("#pagination").twbsPagination({
+				totalPages: <?php echo $total_page; ?>,
+						visiblePages: 10,
+						startPage: <?php echo $page; ?>,
+						href: "?page={{number}}",
+						first: '首页',
+						prev: '上一页',
+						next: '下一页',
+						last: '最后一页'
+				
+					});
+				$("#keyword").select();
+			</script>
+		</div>
+	</div>
 </body>
 </html>

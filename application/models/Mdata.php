@@ -63,8 +63,7 @@ class Mdata extends CI_Model
 				"size" => $size,
 				"magnet" => "magnet:?xt=urn:btih:$hash&dn=$title",
 				"indexdate" => datetime("Y-m-d", $t),
-
-
+				"detail" => $this->parse_content($row->info, $size, $hash, $t),
 			);
 		}
 		$totalPages =  intval($res["total_found"] / 20);
@@ -79,17 +78,17 @@ class Mdata extends CI_Model
 			'datas' => $arr,
 			'total_found' => $res['total_found'],
 			'key' => $key,
+			'words'=>array_keys($res['words']),
 		);
+		
 		/*
 		echo "<pre>";
-		var_dump($arr);
+		var_dump($data);
 		echo "</pre>";
 		 */
+
 		$this->do_statistics();
 		return $data;
-		
-
-
 	}
 	function sphinx_query($query_str, $index, $page = 1)
 	{
@@ -123,10 +122,15 @@ class Mdata extends CI_Model
 		}
 		$infoall = $arr[0]->info;
 		$hash = $arr[0]->hash;
-		$infos = explode("\n", $infoall);
-		$i = 0;
 		$total_size = $arr[0]->size;
 		$t = $arr[0]->time;
+		$data = $this->parse_content($infoall, $total_size, $hash, $t);
+		return $data;
+	}
+	function parse_content($contents, $total_size, $hash, $t)
+	{
+		$infos = explode("\n", $contents);
+		$i = 0;
 		$ret = array();
 		$title = "";
 		foreach($infos as $info)
