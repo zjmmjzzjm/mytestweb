@@ -1,0 +1,96 @@
+html {
+	position: relative; min-height: 100%;
+}
+body {
+	padding-top: 80px; font-family: "Microsoft YaHei"; font-size: 14px; margin-bottom: 90px; -ms-word-break: break-all; background-color: rgb(250, 250, 250);
+}
+.navbar-default {
+	background-color: rgb(235, 235, 235);
+}
+.footer {
+	width: 100%; bottom: 0px; position: absolute;
+}
+.model-say {
+	padding-top: 5px; padding-left: 30px;
+}
+.model-say h4 {
+	padding: 4px 10px; font-size: 16px; font-weight: bold; border-left-color: rgb(144, 170, 6); border-left-width: 4px; border-left-style: solid; background-color: rgb(248, 248, 248);
+}
+.red-say h4 {
+	padding: 4px 10px; font-size: 16px; font-weight: bold; border-left-color: rgb(144, 170, 6); border-left-width: 4px; border-left-style: solid; background-color: rgb(248, 248, 248);
+}
+.model-say-text {
+	margin-top: 15px; margin-bottom: 30px;
+}
+.callout {
+	border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(226, 226, 226); margin: 10px 0px 20px; padding: 10px; border-radius: 3px; border-image: none;
+}
+.wechat-callout {
+	border-left-color: rgb(92, 184, 92);
+}
+.community-callout {
+	border-left-color: rgb(40, 142, 221);
+}
+.red-callout {
+	border-left-color: rgb(207, 45, 45);
+}
+.badge {
+	background-color: rgb(165, 17, 17);
+}
+.green {
+	background-color: rgb(16, 129, 34);
+}
+.blue {
+	background-color: rgb(56, 128, 201);
+}
+.center {
+	text-align: center;
+}
+.bdsug_copy {
+	display: none;
+}
+.logo {
+	text-align: center;
+}
+.hotwords {
+	margin-right: 3px; margin-bottom: 10px;
+}
+.breadcrumb {
+	margin-top: 10px; background-color: rgb(236, 236, 236);
+}
+.highlight {
+	color: rgb(165, 17, 17);
+}
+.item-title {
+	margin-top: 0px;
+}
+.mini-page {
+	margin-top: -20px; margin-bottom: -25px; margin-left: 5px; float: left;
+}
+.otherwords {
+	overflow: hidden; max-height: 203px;
+}
+.info {
+	padding: 5px;
+}
+.otherkey {
+	height: 26px; overflow: hidden; margin-bottom: 5px;
+}
+.magnet {
+	width: 100%; height: 80px; margin-top: -10px; background-color: rgb(232, 252, 232);
+}
+.downbutton {
+	letter-spacing: 1px;
+}
+.downbutton a {
+	padding: 5px 9px; margin-bottom: 10px; text-shadow: 1px 1px 0px #8f8f8f;
+}
+.popover-content {
+	padding: 0px;
+}
+.qrcode {
+	width: 240px; height: 240px;
+}
+.engine {
+	margin-left: 20px; float: right;
+}

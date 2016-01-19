@@ -10,18 +10,17 @@
 
 .content {
     margin: 0 auto;
-    width: 900px;
     padding-top: 100px;
 }
 
 .header {
-    width: 900px;
+
     height: 80px;
     margin: 0 auto;
 }
 
 .footer {
-    width: 900px;
+
     height: 120px;
     margin: 0 auto;
     font-size: 12px;
@@ -35,7 +34,7 @@
     }
 
 .header_container {
-    background: url(/static/images/pattern.png) repeat fixed;
+    background: url(/frontend/images/pattern.png) repeat fixed;
     height: 80px;
     box-shadow: 0 0 10px #333;
     position: fixed;
@@ -45,7 +44,7 @@
 }
 
 .footer_container {
-    background: url(/static/images/pattern.png) repeat fixed;
+    background: url(/frontend/images/pattern.png) repeat fixed;
     padding-top: 20px;
 }
 
