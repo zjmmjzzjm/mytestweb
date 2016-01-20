@@ -10,13 +10,13 @@
 	<META name="viewport" content="width=device-width,initial-scale=1"> 
 	<META name="keywords" content="磁力链接,磁力搜索,磁力搜索,BT资源,迅雷下载,btmilk"> 
 	<META name="description" content="btmilk是一个磁力链接及BT种子搜索引擎,支持最新及热门电影,电视剧、动漫、综艺视频在线云播，超多影视番号、书籍、音乐、游戏、软件资源下载,是专业的磁力种子搜索神器。支持小米路由一键下载。}"> 
-	<LINK href="frontend/images/favicon.png" rel="icon"> 
-	<LINK href="frontend/styles/bootstrap.min.css" rel="stylesheet"> 
-	<LINK href="frontend/styles/feiliuzhixia.css" rel="stylesheet"> 
+	<LINK href="../../frontend/images/favicon.png" rel="icon"> 
+	<LINK href="../../frontend/styles/bootstrap.min.css" rel="stylesheet"> 
+	<LINK href="../../frontend/styles/feiliuzhixia.css" rel="stylesheet"> 
 	<TITLE>btmilk-磁力搜索-种子搜索-迅雷下载</TITLE> 
 	<!--img标签横幅广告位--> 
-	<SCRIPT src="frontend/scripts/jquery.min.js" />
-	<SCRIPT src="frontend/scripts/bootstrap.min.js" />
+	<SCRIPT src="../../frontend/scripts/jquery.min.js" />
+	<SCRIPT src="../../frontend/scripts/bootstrap.min.js" />
 	<!-- <SCRIPT src="css/opensug.js" charset="gbk" /> -->
 </HEAD>
 <BODY>
@@ -58,8 +58,11 @@
 					<SPAN style="color: rgb(229, 51, 51);">点击查看总资源数</SPAN>
 				</A>			 
 				<DIV class="logo">
-					<img src="images/lcssogo.png" href="http://www.btmilk.com/"> 
-					<FORM action="" id="search_form_h" method="GET">
+					<div styles="padding-bottom:20px;height=200px">	
+					<img src="../../frontend/images/logo.png" href="http://www.btmilk.com/">
+					</div>	 
+					
+					<FORM  action="" id="search_form_h" method="GET">
 						<DIV class="input-group">
 							<INPUT name="keyword" id="keyword" class="form-control" autofocus="" required="" type="text" placeholder="搜索电影、剧集、动漫、番号、演员、软件..." value="" baidusug="1">
 							<SPAN class="input-group-btn">
@@ -119,8 +122,6 @@
 				</DIV>
 				<DIV class="navbar-text navbar-right">
 					<P>(c)2015 btmilk.com&nbsp;&nbsp;|&nbsp;
-						<SCRIPT language="JavaScript" src="css/stat.js">
-						</SCRIPT>
 					</P>
 					<P>btmilk磁力搜索引擎，第一好用的磁力搜索引擎</P>
 				</DIV>

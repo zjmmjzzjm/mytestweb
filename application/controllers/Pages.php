@@ -4,6 +4,7 @@
 		public function __construct()
 		{
 			parent::__construct();
+			 date_default_timezone_set('Etc/GMT-8');
 		}
 		public function view($page = "")
 		{

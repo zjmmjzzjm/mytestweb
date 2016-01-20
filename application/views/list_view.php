@@ -17,6 +17,16 @@
     <link href="/frontend/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <script src="/frontend/scripts/site.js?1203"></script>
     <script src="/frontend/scripts/jquery.twbsPagination.min.js"></script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?8bbd5d23f57bb88e46bea517a36efa27";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
 </head>
 <body>
     <div class="header_container">
