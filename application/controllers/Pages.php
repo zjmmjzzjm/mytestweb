@@ -48,6 +48,10 @@
 			{
 				$page = 1;
 			}
+			if(!$key)
+			{
+				$key = $this->input->get("keyword");
+			}
 			$this->load->model('mdata');
 			$data = $this->mdata->search($key, $page);
 /*			echo "<pre>";

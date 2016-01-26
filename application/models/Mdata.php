@@ -8,6 +8,7 @@ class Mdata extends CI_Model
 	private $keyword;
 	private $find_count;
 	private $coder;
+	private $show_per_page;
 
 	function Mdata()
 	{
@@ -18,6 +19,7 @@ class Mdata extends CI_Model
 		$this->coder = new XDecode(16, $this->key);
 		$this->find_count = 0;
 		$this->keyword = "";
+		$this->show_per_page = 10;
 	}
 	function search($key, $page)
 	{
@@ -66,7 +68,7 @@ class Mdata extends CI_Model
 				"detail" => $this->parse_content($row->info, $size, $hash, $t),
 			);
 		}
-		$totalPages =  intval($res["total_found"] / 20);
+		$totalPages =  intval($res["total_found"] / $this->show_per_page);
 		$this->find_count = $res["total_found"];
 		if($totalPages > 50)
 		{
@@ -93,8 +95,8 @@ class Mdata extends CI_Model
 	function sphinx_query($query_str, $index, $page = 1)
 	{
 		$index = "*";
-		$limit = 20 * $page;
-		$this->cl->SetLimits ( $limit - 20, 20, ( $limit>1000 ) ? $limit : 1000 );
+		$limit = $this->show_per_page * $page;
+		$this->cl->SetLimits ( $limit - $this->show_per_page, $this->show_per_page, ( $limit>1000 ) ? $limit : 1000 );
 		$res = $this->cl->Query ( $query_str, $index );
 		if($res['total'] == 0)
 			return NULL;
@@ -190,7 +192,7 @@ class Mdata extends CI_Model
 		$distinct = "";
 		$sortby = "";
 		$sortexpr = "";
-		$limit = 20;
+		$limit = $this->show_per_page;
 		$ranker = SPH_RANK_PROXIMITY_BM25;
 		$select = "";
 
