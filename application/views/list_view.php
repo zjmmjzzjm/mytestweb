@@ -30,10 +30,10 @@
 			</div>
 			<div class="navbar-collapse collapse" id="navbar">
 				<ul class="nav navbar-nav">
-                    <li><a href="/tpl/template/help.html" target="_blank">下载帮助</a></li>
+                    <li><a href="#" target="_blank">下载帮助</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/tpl/template/message.html" target="_blank">交流求片</a></li>
+					<li><a href="#" target="_blank">交流求片</a></li>
 				</ul>
 			</div>
 		</div>
@@ -70,7 +70,7 @@
 						<h5 class="item-title"><a href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo highlight_keywords($data['title'], $words) ?></a></h5>
 						<table>
 							<tr>
-								<td width="90px"><span class="label label-info"><b>2015-12-30</b></span></td>
+								<td width="90px"><span class="label label-info"><b><?php echo $data['indexdate'] ?></b></span></td>
 								<td width="100px"><span class="label label-info"><b>4.63GB</b></span></td>
 								<td width="45px"><span class="label label-success"><?php echo  guess_torrent_type($data['detail']['files'])?></span></td>
 								<td width="80px"><span class="label label-danger"><b>145 &#176;C</b></span></td>
@@ -128,7 +128,7 @@
 				totalPages: <?php echo $total_page; ?>,
 						visiblePages: 10,
 						startPage: <?php echo $page; ?>,
-						href: "?page={{number}}",
+						href: "?<?php echo 'keyword='.$key?>&page={{number}}",
 						first: '首页',
 						prev: '上一页',
 						next: '下一页',
@@ -140,11 +140,11 @@
 			</div>
 		</div>
 	</div>
-<nav class="footer navbar-inverse">
+	<nav class="footer navbar-inverse">
 		<div class="container">
 			<div class="navbar-collapse collapse navbar-text">
 				<p>简单、快速、高效、稳定、影视、音乐、软件、BT、种子</p>
-				<p><a href="/tpl/template/dcma.html">btmilk声明</a> | <a href="/tpl/template/sitemap.xml" target="_blank">网站地图</a></p>
+				<p><a href="#">btmilk声明</a> | <a href="#" target="_blank">网站地图</a></p>
 			</div>
 			<div class="navbar-text navbar-right">
 				<p>(c)<?php echo date("Y") ?> btmilk.com&nbsp;|&nbsp;</a></p>

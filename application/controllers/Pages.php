@@ -11,6 +11,19 @@
 
 			 $data['title'] = ucfirst("wwwwwwwww");
 
+			$this->load->model('mdata');
+			$ret = $this->mdata->get_torrent_cnt();
+			
+			if($ret)
+			{
+				$data['total'] = $ret["total"];
+				$data['yesterday'] = $ret['yesterday'];
+			}
+			else
+			{
+				$data['total'] = 17000000;
+				$data['yesterday'] = 10278;
+			}
 			 $this->load->view('base_page', $data);
 			 $this->load->view('footer', $data);
 

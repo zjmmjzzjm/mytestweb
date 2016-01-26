@@ -41,23 +41,23 @@
 			<DIV class="navbar-collapse collapse" id="navbar">
 				<UL class="nav navbar-nav">
 					<LI>
-						<A href="http://www.btmilk.com/tpl/template/help.html" target="_blank">下载帮助</A>
+						<A href="#" target="_blank">下载帮助</A>
 					</LI>
 				</UL>
 				<UL class="nav navbar-nav navbar-right">
 					<LI>
-						<A href="http://www.btmilk.com" target="_blank">交流求片</A>
+						<A href="#" target="_blank">交流求片</A>
 					</LI>
 				</UL>
 			</DIV>
 		</DIV>
 	</NAV>
 	<DIV class="container">
+			<DIV class="col-lg-12">
+			<SPAN class="pull-right" >站内资源总数：<b><?php echo $total ?></b>, 昨日新增：<b><?php echo $yesterday ?></b></SPAN>
+			</DIV>
 		<DIV class="jumbotron">
 			<DIV class="container">
-				<A href="http://www.btmilk.com/tpl/template/zs.php" target="_blank">
-					<SPAN style="color: rgb(229, 51, 51);">点击查看总资源数</SPAN>
-				</A>			 
 				<DIV class="logo">
 					<div style="padding-bottom:20px;">	
 					<img style="max-width:100%;" src="/frontend/images/logo.png" href="http://www.btmilk.com/">

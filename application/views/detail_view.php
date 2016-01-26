@@ -1,214 +1,166 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-CN">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit" />
-    <meta name="keywords" content="btmilk, magnet link, torrent, magnet search, torrent search engine" />
-    <meta name="description" content="This is a powerful Magnet Link search engine that helps you discovery the DHT network." />
-	<title><?php echo $title; ?> - The Magnet Link Search Engine</title>
-    <script src="/frontend/scripts/jquery.min.js"></script>
-    <link href="/frontend/styles/bootstrap.min.css" rel="stylesheet" />
-    <link href="/frontend/styles/site.css" rel="stylesheet" />
-    <link href="/frontend/styles/buttons.min.css" rel="stylesheet" />
-    <link href="/frontend/styles/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/frontend/styles/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <script src="/frontend/scripts/site.js?1203"></script>
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?8bbd5d23f57bb88e46bea517a36efa27";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><?php echo $title ?>-btmilk</title>
+<meta name="keywords" content="btmilk,奶茶,<?php echo $title ?>-下载,<?php echo $title ?>-资源">
+<meta name="description" content="btmilk—全球领先的种子搜索引擎，是新一代的p2p种子搜索神器，致力于给广大网友提供最先进的种子搜索服务，千万条的最全p2p种子库，没有你搜不到，只有你想不到！">
+<link href="/frontend/images/favor.jpg" rel="icon">
+<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="/frontend/styles/feiliuzhixia.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header_container">
-        <div class="header">
-            <form action="index.php/search" method="get" id="search_form" style="height: 80px;">
-                <a href="/">Home Page</a>
-                    <div style="float: right;">
-                        <input type="text" name="keyword" id="keyword" class="search_box" />
-                        <input type="submit" value="搜索" class="search_button" />
-                    </div>
-            </form>
-                <script type="text/javascript">
-                    $("#keyword").focus();
-					$("#search_form").submit(function (e) {
-                        e.preventDefault();
-                        var q = $("#keyword").val();
-						if (!q || q.trim() == '') {
-                            $("#keyword").focus();
-                            return false;
-                        
-						}
-                        window.location.pathname = "/index.php/search/" + encodeURIComponent(q.trim());
-                        return false;
-                    
-							});
-                </script> 
-        </div>
-    </div>
-    <div class="content">
-        <div>
-    <script src="/frontend/scripts/jquery-ui-1.9.2.custom.min.js"></script>
-    
-    <script src="/frontend/scripts/ZeroClipboard.min.js" type="text/javascript"></script>
-
-<h1 class="torrent_title"><?php echo $title ?></h1>
-
-    <div style="margin-top: 20px; margin-bottom: 20px; text-align: center;">
-	<textarea id="magnet_link_box" class="form-control" style="width: 840px; height: 80px; word-break: break-all; cursor: text; margin: 0 auto;" readonly="readonly"><?php echo $summary["magnet"];?></textarea>
-    </div>
-
-    <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-        <span style="font-weight: bold;">一周下载统计 (0)</span>
-        <div style="margin: 0 auto; width: 700px;">
-            <canvas id="requestChart" height="100"></canvas>
-        </div>
-        <script src="/frontend/scripts/chart.min.js" type="text/javascript"></script>
-    </div>
-
-    <div style="margin-top: 5px; margin-bottom: 20px; text-align: center;">
-        <span style="font-weight: bold;">种子信息</span>
-        <div style="color: #333;">
-		<span style="font-weight: bold; margin-left: 5px;">大小: </span><span><?php echo $summary["size"]; ?></span>
-		<span style="font-weight: bold; margin-left: 20px;">文件数: </span><span><?php echo $summary["filenum"]; ?></span>
-			<span style="font-weight: bold; margin-left: 20px;">索引日期: </span><span><?php echo $summary["indexdate"]; ?></span>
-			<span style="font-weight: bold; margin-left: 20px;">哈希值: </span><span><?php echo $summary["hash"]; ?></span>
-        </div>
-    </div>
-
-    <div style="margin-top: 5px; margin-bottom: 20px; text-align: center;">
-        <span style="font-weight: bold;">相关搜索</span>
-        <div style="color: #333;">
-            <ul class="keywords_list">
-            </ul>
-        </div>
-    </div>
-
-    <div>
-        <span style="font-weight: bold;">文件名</span>
-        <span style="font-weight: bold; float: right;">大小</span>
-    </div>
-    <hr class="item_separator" />
-    <div style="margin-bottom: 50px;">
-<?php foreach ($files as $finfo) {
-
-?>
-            <div>
-			<span style="word-break: break-all; width: 800px; display: inline-block;"><i class="fa fa-file-video-o" style="margin-right: 5px;"></i><?php echo $finfo["file"]; ?> </span>
-				<span style="float: right;"><?php echo $finfo["size"]; ?> </span>
-            </div>
-            <hr class="item_separator" />
-<?php } ?>
-    </div>
-
-    <div id="qr_dialog" style="display: none;">
-        <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
-            <img style="height: 148px; width: 148px;" />
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        var hash = 'ed1816d9e1ce32065020b5836685d6469d7ab825';
-        var title = 'df5e4d243db855877b91f19d0078a52e';
-
-        // Share
-        var shareClicked = false;
-
-		function initializeShareComponent() {
-			$("#share_container a").each(function (i) {
-                var platform = $(this).attr("data-platform");
-                var url = 'https://api.addthis.com/oexchange/0.8/forward/' + platform + '/offer?url=http%3A%2F%2Fwww.btdepot.com%2Ft%2F' + hash + '&pubid=ra-547728fb3d5bd7ef&ct=1&title=' + title + '&pco=tbxnj-1.0';
-                var src = 'https://cache.addthiscdn.com/icons/v2/thumbs/32x32/' + platform + '.png';
-                $(this).attr("href", url);
-                $(this).children().attr("src", src);
-            
-					});
-        
-		}
-
-function toggle_share() {
-	if (!shareClicked) {
-                initializeShareComponent();
-                shareClicked = true;
-            
-	}
-            $("#share_panel").fadeToggle(400);
-        
-}
-
-        // Mangnet Link Box
-$("#magnet_link_box").focus(function () {
-            $(this).select();
-        
-		});
-
-        // Copy to Clipboard
-        var client = new ZeroClipboard(document.getElementById("copy_button"));
-		client.on("aftercopy", function (e) {
-            $("#magnet_link_box").focus();
-        
-				});
-
-$("#qr_button").click(function () {
-		$("#qr_dialog").dialog({
-                autoOpen: true,
-                modal: true,
-                resizable: false,
-                width: 380,
-				buttons: {
-				"Close": function () {
-                        $(this).dialog("close");
-                    
-				}
-                
-				},
-open: function (event, ui) {
-                    $(".ui-dialog-titlebar").hide();
-					if (!$("#qr_dialog img").attr("src")) {
-                        $("#qr_dialog img").attr("src", "/dynamic/qr/ed1816d9e1ce32065020b5836685d6469d7ab825")
-                    
-					}
-                
-}
-            
-			});
-        
-		});
-
-        // Downloads Chart
-        var rgb = "153,204,204";
-		var lineChartData = {
-            labels: ['10-12','10-13','10-14','10-15','10-16','10-17','10-18'],
-					datasets: [{
-                label: "dataset",
-                fillColor: "rgba(" + rgb + ",0.2)",
-                strokeColor: "rgba(" + rgb + ",1)",
-                pointColor: "rgba(" + rgb + ",1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [0,0,0,0,0,0,0]
-                
-					}]
-        
-		};
-            var ctx = document.getElementById("requestChart").getContext("2d");
-			new Chart(ctx).Line(lineChartData, {
-                responsive: true,
-                scaleOverride: false
-            
-					});
-    </script>
-</div>
-    </div>
-<div class="footer_container">
-</div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar">
+					<span class="sr-only">磁力链接</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">btmilk</a>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar">
+			<ul class="nav navbar-nav">
+                    <li><a href="" target="_blank">下载帮助</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="" target="_blank">交流求片</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" >
+		<form action="/index.php/search">
+			<div class="input-group">
+			<input class="form-control" type="text" name="keyword" value="" placeholder="搜索电影、剧集、动漫、番号、演员..." baiduSug="1" autofocus required>
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
+				</span>
+			</div>
+		</form>
+	</div>
+	<div class="container"  >
+	<h3><?php echo $title ?></h3>
+	</div>
+	<div class="container"  >
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="info row">
+							<div class="col-xs-4"><b>创建时间</b>&nbsp;&nbsp;&nbsp;<span class=""><?php echo $summary["indexdate"]; ?></span></div>
+							<div class="col-xs-4"><b>文件大小</b>&nbsp;&nbsp;&nbsp;<span class=""><?php echo $summary["size"]; ?></span></div>
+							<div class="col-xs-4"><b>连接速度</b>&nbsp;&nbsp;&nbsp;<span class="">很快</span></div>
+						</div>
+						<div class="info row">
+						<div class="col-xs-4"><b>活跃时间</b>&nbsp;&nbsp;&nbsp;<span class=""><?php echo date("Y-m-d") ?></span></div>
+						<div class="col-xs-4"><b>文件数量</b>&nbsp;&nbsp;&nbsp;<span class=""><?php echo $summary["filenum"]; ?></span></div>
+						<!-- <div class="col-xs-4"><b>热度指数</b>&nbsp;&nbsp;&nbsp;<span class="">2 &#176;C</span></div> -->
+						</div>
+						<div class="info row">
+							<div class="col-md-12"><b>种子哈希</b>&nbsp;&nbsp;&nbsp;<span class="badge green"><?php echo $summary["hash"]; ?></span></div>
+						</div>
+					</div>
+				</div>
+				<textarea class="well magnet center" id="MagnetLink" onclick="$(this).select();" readonly><?php echo $summary["magnet"];?></textarea>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading center"><b>热门搜索</b></div>
+					<div class="panel-body otherwords">
+						<p>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=狼图腾" target="_blank">狼图腾</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=以和为贵" target="_blank">以和为贵</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=速度与激情" target="_blank">速度与激情</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=超能陆战队" target="_blank">超能陆战队</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=生死阻击" target="_blank">生死阻击</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=死神来了" target="_blank">死神来了</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=道士出山" target="_blank">道士出山</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=天将雄狮" target="_blank">天将雄狮</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=左耳" target="_blank">左耳</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=战狼" target="_blank">战狼</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=澳门风云" target="_blank">澳门风云</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=万物生长" target="_blank">万物生长</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=何以笙箫默" target="_blank">何以笙箫默</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=星际穿越" target="_blank">星际穿越</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=功夫" target="_blank">功夫</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=咱们结婚吧" target="_blank">咱们结婚吧</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=复仇者联盟" target="_blank">复仇者联盟</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=四大名捕" target="_blank">四大名捕</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=木星上行" target="_blank">木星上行</a>
+							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=一步之遥" target="_blank">一步之遥</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container"  >
+		<div class="row">
+			<div class="col-md-8">
+				<div class="downbutton center">
+					<a class="btn btn-sm btn-success" href="<?php echo $summary['magnet'];?>">立即下载</a>
+					<a class="btn btn-sm btn-primary" href="http://vod.xunlei.com/mini.html?url=<?php echo $summary['magnet'];?>" target="_blank"><b>迅雷云播</b></a>
+					<a class="btn btn-sm btn-danger" href="http://pan.baidu.com/" target="_blank"><b>百度网盘</b></a>			
+					</div>
+				<table class="table table-striped">
+					<tr>
+						<th colspan="1">
+							<span>文件列表</span>
+						</th>
+						<th colspan="1">
+							<span>文件大小</span>
+						</th>
+					</tr>
+					
+					<?php foreach ($files as $finfo) { ?>
+					<tr>
+						<td><?php echo $finfo["file"]; ?></td>
+						<td><?php echo $finfo["size"]; ?></td>
+					</tr>
+					<?php } ?>
+					<tr>
+						<td>btmilk影视搜索（www.btmilk.com）</td>
+						<td>btmilk.com</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-4">
+				<div class="navbar-collapse collapse"></div><p>btmilk磁力搜索引擎，第一好用的磁力搜索引擎</p>
+				<!--内容页左侧上部广告位-->
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="gg-item-left"></div>
+			</div><!--内容页左侧下部广告位-->
+		</div>
+		<div class="col-md-8">
+			<div class="gg-item-center"></div>
+		</div>
+	</div>
+<nav class="footer navbar-inverse">
+		<div class="container">
+			<div class="navbar-collapse collapse navbar-text">
+				<p>简单、快速、高效、稳定、影视、音乐、软件、BT、种子</p>
+				<p><a href="#">btmilk声明</a> | <a href="#" target="_blank">网站地图</a></p>
+			</div>
+			<div class="navbar-text navbar-right">
+			<p>(c)<?php echo date("Y") ?> btmilk.com&nbsp;&nbsp;|&nbsp;<a><span>
+			<p>btmilk磁力搜索引擎，第一好用的磁力搜索引擎</p>
+			</div>
+		</div>
+</nav>
+<!--img标签横幅广告位-->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://www.baidu.com/js/opensug.js" charset="gbk"></script>
 </body>
 </html>

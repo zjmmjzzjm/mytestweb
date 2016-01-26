@@ -21,6 +21,29 @@ class Mdata extends CI_Model
 		$this->keyword = "";
 		$this->show_per_page = 10;
 	}
+	function get_torrent_cnt()
+	{
+		$q = $this->db->get("sphinx_counter");
+		if(!$q)
+			return NULL;
+		$ra = $q->result();
+
+		$cnt = count($ra);
+		if($cnt == 0)
+			return NULL;
+		if($cnt == 1)
+		{
+			return array("total"=>$ra[$cnt-1]->max_sphinx_id, "yesterday"=>0);
+		}
+		else
+		{
+			
+			$total = $ra[$cnt-1]->max_sphinx_id;
+			$yesterday = $ra[$cnt-2]->max_sphinx_id;
+			return array("total"=>$total, "yesterday"=>$total-$yesterday);
+		}
+
+	}
 	function search($key, $page)
 	{
 		$key = urldecode($key);
