@@ -87,26 +87,26 @@
 					<div class="panel-body">
 					<!--更改下面电影的时候，左侧和右侧要一致，不能只修改一侧，例如:煎饼侠.html">煎饼侠</a>-->
 						<p>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-速度与激情.html" target="_blank">速度与激情</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-左耳.html" target="_blank">左耳</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-战狼.html" target="_blank">战狼</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-澳门风云.html" target="_blank">澳门风云</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-万物生长.html" target="_blank">万物生长</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-何以笙箫默.html" target="_blank">何以笙箫默</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-超能陆战队.html" target="_blank">超能陆战队</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-四大名捕.html" target="_blank">四大名捕</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-木星上行.html" target="_blank">木星上行</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-一步之遥.html" target="_blank">一步之遥</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-生死阻击.html" target="_blank">生死阻击</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-咱们结婚吧.html" target="_blank">咱们结婚吧</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-复仇者联盟.html" target="_blank">复仇者联盟</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-狼图腾.html" target="_blank">狼图腾</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-以和为贵.html" target="_blank">以和为贵</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-死神来了.html" target="_blank">死神来了</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-道士出山.html" target="_blank">道士出山</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-天将雄狮.html" target="_blank">天将雄狮</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-星际穿越.html" target="_blank">星际穿越</a>
-							<a class="btn btn-sm btn-warning hotwords" href="/main-search-kw-功夫.html" target="_blank">功夫</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=速度与激情" target="_blank">速度与激情</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=左耳" target="_blank">左耳</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=战狼" target="_blank">战狼</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=澳门风云" target="_blank">澳门风云</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=万物生长" target="_blank">万物生长</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=何以笙箫默" target="_blank">何以笙箫默</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=超能陆战队" target="_blank">超能陆战队</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=四大名捕" target="_blank">四大名捕</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=木星上行" target="_blank">木星上行</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=一步之遥" target="_blank">一步之遥</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=生死阻击" target="_blank">生死阻击</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=咱们结婚吧" target="_blank">咱们结婚吧</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=复仇者联盟" target="_blank">复仇者联盟</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=狼图腾" target="_blank">狼图腾</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=以和为贵" target="_blank">以和为贵</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=死神来了" target="_blank">死神来了</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=道士出山" target="_blank">道士出山</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=天将雄狮" target="_blank">天将雄狮</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=星际穿越" target="_blank">星际穿越</a>
+							<a class="btn btn-sm btn-warning hotwords" href="/index.php/search?keyword=功夫" target="_blank">功夫</a>
 						</p>
 					</div>
 				</div>
