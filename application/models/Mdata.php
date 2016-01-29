@@ -104,6 +104,7 @@ class Mdata extends CI_Model
 			'total_found' => $res['total_found'],
 			'key' => $key,
 			'words'=>array_keys($res['words']),
+			'hotwords'=>$this->get_hot_words(),
 		);
 		
 		/*
@@ -265,6 +266,23 @@ class Mdata extends CI_Model
 		$date  = date('Ymd');
 		return "statistic_$date";
 	}
+	//type=1推荐 2 热门 3最新
+	function get_hot_words($type=1)
+	{
+		$t = strtotime(date("Y-m-d")) - 3600*24;
+		$sql = "select * from hotwords where type=$type and time>$t ";
+		$q = $this->db->query($sql);
+		if($q)
+		{
+			$res = $q->result();
+			if(!$res)
+				return array();
+			$r = end($res);
+			$words = explode("|", $r->words);
+			return $words;
+		}
+		return array();
+	}	
 
 
 function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {   

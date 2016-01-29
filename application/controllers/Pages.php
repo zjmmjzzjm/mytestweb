@@ -24,6 +24,7 @@
 				$data['total'] = 17000000;
 				$data['yesterday'] = 10278;
 			}
+			$data['hotwords'] = $this->mdata->get_hot_words(1);
 			 $this->load->view('base_page', $data);
 			 $this->load->view('footer', $data);
 
@@ -71,6 +72,7 @@
 			var_dump($data["datas"]);
 			echo "</pre>";
  */
+			$data['hotwords'] = $this->mdata->get_hot_words(2);
 			if($data != NULL)
 			{
 				$data['title'] = $key;
@@ -122,6 +124,7 @@
 			if($data != NULL)
 			{
 				$data["title"] = $data['summary']['title'];
+				$data['hotwords'] = $this->mdata->get_hot_words(3);
 				$this->load->helper('view_helper');
 				$this->load->view("detail_view", $data);
 				$this->load->view('footer', $data);

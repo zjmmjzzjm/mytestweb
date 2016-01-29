@@ -85,26 +85,9 @@ var _hmt = _hmt || [];
 					<div class="panel-heading center"><b>热门搜索</b></div>
 					<div class="panel-body otherwords">
 						<p>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=狼图腾" target="_blank">狼图腾</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=以和为贵" target="_blank">以和为贵</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=速度与激情" target="_blank">速度与激情</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=超能陆战队" target="_blank">超能陆战队</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=生死阻击" target="_blank">生死阻击</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=死神来了" target="_blank">死神来了</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=道士出山" target="_blank">道士出山</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=天将雄狮" target="_blank">天将雄狮</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=左耳" target="_blank">左耳</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=战狼" target="_blank">战狼</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=澳门风云" target="_blank">澳门风云</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=万物生长" target="_blank">万物生长</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=何以笙箫默" target="_blank">何以笙箫默</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=星际穿越" target="_blank">星际穿越</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=功夫" target="_blank">功夫</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=咱们结婚吧" target="_blank">咱们结婚吧</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=复仇者联盟" target="_blank">复仇者联盟</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=四大名捕" target="_blank">四大名捕</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=木星上行" target="_blank">木星上行</a>
-							<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=一步之遥" target="_blank">一步之遥</a>
+						<?php foreach($hotwords as $hotword) { ?>
+						<a class="btn btn-xs btn-danger hotwords" href="/index.php/search?keyword=<?php echo $hotword ?>" target="_blank"><?php echo $hotword ?></a>
+						<?php } ?>
 						</p>
 					</div>
 				</div>

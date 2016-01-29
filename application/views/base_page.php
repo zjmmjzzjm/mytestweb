@@ -76,20 +76,9 @@
 		
 		<DIV class="container">
 			<P class="center"> <!--更改下面电影的时候，左侧和右侧要一致，不能只修改一侧，例如:煎饼侠.html">煎饼侠</a>-->
-			<A class="btn btn-default hotwords" href="/index.php/search/夏洛特烦恼">夏洛特烦恼</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/港囧">港囧</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/烈日灼心">烈日灼心</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/心迷宫">心迷宫</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/蚁人">蚁人</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/煎饼侠">煎饼侠</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/左耳">左耳</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/捉妖记">捉妖记</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/西游记之大圣归来">西游记之大圣归来</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/超能陆战队">超能陆战队</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/木星上行">木星上行</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/生死阻击">生死阻击</A>
-			<A class="btn btn-default hotwords" href="/index.php/search/windows">windows</A> 
-			<A class="btn btn-default hotwords" href="/index.php/search/加勒比">加勒比</A>
+			<?php foreach($hotwords as $hotword) { ?>
+			<A class="btn btn-default hotwords" href="/index.php/search?keyword=<?php echo $hotword;?>"><?php echo $hotword; ?></A>
+			<?php } ?>
 			</P>
 		</DIV>
 		</DIV>
