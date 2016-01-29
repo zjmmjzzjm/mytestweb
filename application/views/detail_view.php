@@ -150,7 +150,7 @@
 		<div class="container">
 			<div class="navbar-collapse collapse navbar-text">
 				<p>简单、快速、高效、稳定、影视、音乐、软件、BT、种子</p>
-				<p><a href="#">btmilk声明</a> | <a href="#" target="_blank">网站地图</a></p>
+				<p><a href="/declare.html">btmilk声明</a> | <a href="/sitemap.xml" target="_blank">网站地图</a></p>
 			</div>
 			<div class="navbar-text navbar-right">
 			<p>(c)<?php echo date("Y") ?> btmilk.com&nbsp;&nbsp;|&nbsp;<a><span>

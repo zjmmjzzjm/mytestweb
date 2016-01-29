@@ -98,8 +98,8 @@
 				<DIV class="navbar-collapse collapse navbar-text">
 					<P>简单、快速、高效、稳定、影视、音乐、软件、BT、种子</P>
 					<P>
-						<A href="http://www.btmilk.com/tpl/template/dcma.html">btmilk声明</A> | <A 
-							href="http://www.btmilk.com/tpl/template/sitemap.xml" 
+						<A href="/declare.html">btmilk声明</A> | <A 
+							href="/sitemap.xml" 
 							target="_blank">网站地图</A>
 					</P>
 				</DIV>

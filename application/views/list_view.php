@@ -71,7 +71,7 @@
 						<table>
 							<tr>
 								<td width="90px"><span class="label label-info"><b><?php echo $data['indexdate'] ?></b></span></td>
-								<td width="100px"><span class="label label-info"><b>4.63GB</b></span></td>
+								<td width="100px"><span class="label label-info"><b><?php echo $data['size'] ?></b></span></td>
 								<td width="45px"><span class="label label-success"><?php echo  guess_torrent_type($data['detail']['files'])?></span></td>
 								<td width="80px"><span class="label label-danger"><b>145 &#176;C</b></span></td>
 								<td width="100px"><a class="label label-primary" href="/index.php/detail/<?php echo $data['id'];?>" target="_blank" title="查看详细信息">详细信息</a></td>
@@ -144,7 +144,7 @@
 		<div class="container">
 			<div class="navbar-collapse collapse navbar-text">
 				<p>简单、快速、高效、稳定、影视、音乐、软件、BT、种子</p>
-				<p><a href="#">btmilk声明</a> | <a href="#" target="_blank">网站地图</a></p>
+				<p><a href="/declare.html">btmilk声明</a> | <a href="/sitemap.xml" target="_blank">网站地图</a></p>
 			</div>
 			<div class="navbar-text navbar-right">
 				<p>(c)<?php echo date("Y") ?> btmilk.com&nbsp;|&nbsp;</a></p>
