@@ -11,6 +11,17 @@
 <link href="/frontend/images/favor.jpg" rel="icon">
 <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 <link href="/frontend/styles/feiliuzhixia.css" rel="stylesheet">
+<script>
+var _hmt = _hmt || [];
+(function() {
+	  var hm = document.createElement("script");
+	    hm.src = "//hm.baidu.com/hm.js?8bbd5d23f57bb88e46bea517a36efa27";
+	    var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+
+})();
+</script>
+
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">

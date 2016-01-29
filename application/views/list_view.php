@@ -14,6 +14,17 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="/frontend/scripts/jquery.twbsPagination.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+	  var hm = document.createElement("script");
+	    hm.src = "//hm.baidu.com/hm.js?8bbd5d23f57bb88e46bea517a36efa27";
+	    var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+
+})();
+</script>
+
 </head>
 <body>
 
