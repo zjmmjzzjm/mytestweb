@@ -41,7 +41,7 @@ var _hmt = _hmt || [];
 			</div>
 			<div class="navbar-collapse collapse" id="navbar">
 				<ul class="nav navbar-nav">
-                    <li><a href="#" target="_blank">下载帮助</a></li>
+                    <li><a href="/help.html" target="_blank">下载帮助</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#" target="_blank">交流求片</a></li>

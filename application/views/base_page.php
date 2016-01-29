@@ -41,7 +41,7 @@
 			<DIV class="navbar-collapse collapse" id="navbar">
 				<UL class="nav navbar-nav">
 					<LI>
-						<A href="#" target="_blank">下载帮助</A>
+						<A href="/help.html" target="_blank">下载帮助</A>
 					</LI>
 				</UL>
 				<UL class="nav navbar-nav navbar-right">
