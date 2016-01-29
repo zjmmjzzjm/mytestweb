@@ -84,8 +84,9 @@
 				$data = array(
 					'key' => $key,
 					'title'=>$key,
+					'datas'=>array(),
 				);
-				$this->load->view('error_view', $data);
+				$this->load->view('list_view', $data);
 			}
 		}
 	

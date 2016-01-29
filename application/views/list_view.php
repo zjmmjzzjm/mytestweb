@@ -65,7 +65,9 @@ var _hmt = _hmt || [];
 			<li><a  href="#">创建时间</a></li>
 			<li><a  href="#">文件大小</a></li>
 			<li><a  href="#">热度指数</a></li$>
+			<?php if ($datas){ ?>
 			<li>&nbsp;&nbsp;已为您搜索到包含  <font color="red"><?php echo $key?></font> 的 <font color="red"><?php echo $total_found?></font> 个资源 ,耗时<font color="red"> <?php echo $time?></font> 秒。 </li>
+			<?php } ?>
 		</ol>
 	</div>
 	
@@ -74,7 +76,7 @@ var _hmt = _hmt || [];
 			<div class="col-md-8">
 				<div class="navbar-collapse collapse" style="padding-right: 0px;padding-left: 0px;">
 				</div>
-				<?php foreach( $datas as $data ) 
+				<?php if (!$datas) {echo '没有找到您搜索的关键字，换下关键字试试吧!';} else foreach( $datas as $data ) 
 				{ ?>
 				<div class="panel panel-default">
 					<div class="panel-body">
