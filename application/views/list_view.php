@@ -114,7 +114,7 @@ var _hmt = _hmt || [];
 	</div>
 	<div class="container" style="padding-right: 60px; padding-left: 60px;">
 	
-		<div class="navbar-collapse collapse">
+		<div class="navbar-collapse">
 			<div class="row">
 			<div style="text-align: center;" class= "pagination col-md-8">
 				<ul id="pagination" class="pagination-sm"></ul>

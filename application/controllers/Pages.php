@@ -72,9 +72,9 @@
 			var_dump($data["datas"]);
 			echo "</pre>";
  */
-			$data['hotwords'] = $this->mdata->get_hot_words(2);
 			if($data != NULL)
 			{
+				$data['hotwords'] = $this->mdata->get_hot_words(2);
 				$data['title'] = $key;
 				$data['page'] = $page;
 				$this->load->helper('view_helper');
@@ -88,6 +88,7 @@
 					'title'=>$key,
 					'datas'=>array(),
 				);
+				$data['hotwords'] = $this->mdata->get_hot_words(2);
 				$this->load->view('list_view', $data);
 			}
 		}
