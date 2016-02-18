@@ -63,8 +63,6 @@ var _hmt = _hmt || [];
 		<ol class="breadcrumb">
 			<b>排序方式：</b>
 			<li><a  href="#">创建时间</a></li>
-			<li><a  href="#">文件大小</a></li>
-			<li><a  href="#">热度指数</a></li$>
 			<?php if ($datas){ ?>
 			<li>&nbsp;&nbsp;已为您搜索到包含  <font color="red"><?php echo $key?></font> 的 <font color="red"><?php echo $total_found?></font> 个资源 ,耗时<font color="red"> <?php echo $time?></font> 秒。 </li>
 			<?php } ?>
@@ -86,7 +84,6 @@ var _hmt = _hmt || [];
 								<td width="90px"><span class="label label-info"><b><?php echo $data['indexdate'] ?></b></span></td>
 								<td width="100px"><span class="label label-info"><b><?php echo $data['size'] ?></b></span></td>
 								<td width="45px"><span class="label label-success"><?php echo  guess_torrent_type($data['detail']['files'])?></span></td>
-								<td width="80px"><span class="label label-danger"><b>145 &#176;C</b></span></td>
 								<td width="100px"><a class="label label-primary" href="/index.php/detail/<?php echo $data['id'];?>" target="_blank" title="查看详细信息">详细信息</a></td>
 							</tr>
 						</table>
