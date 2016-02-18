@@ -91,7 +91,7 @@ class Mdata extends CI_Model
 				"detail" => $this->parse_content($row->info, $size, $hash, $t),
 			);
 		}
-		$totalPages =  intval($res["total_found"] / $this->show_per_page);
+		$totalPages =  ceil($res["total_found"] / $this->show_per_page);
 		$this->find_count = $res["total_found"];
 		if($totalPages > 50)
 		{
@@ -118,7 +118,7 @@ class Mdata extends CI_Model
 	}
 	function sphinx_query($query_str, $index, $page = 1)
 	{
-		$index = "*";
+		$index = "main";
 		$limit = $this->show_per_page * $page;
 		$this->cl->SetLimits ( $limit - $this->show_per_page, $this->show_per_page, ( $limit>1000 ) ? $limit : 1000 );
 		$res = $this->cl->Query ( $query_str, $index );
