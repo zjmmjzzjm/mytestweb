@@ -214,7 +214,7 @@ class Mdata extends CI_Model
 		$filter = "group_id";
 		$filtervals = array();
 		$distinct = "";
-		$sortby = "";
+		$sortby = "@id DESC";
 		$sortexpr = "";
 		$limit = $this->show_per_page;
 		$ranker = SPH_RANK_PROXIMITY_BM25;
