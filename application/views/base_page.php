@@ -15,7 +15,6 @@
 <link href="/frontend/styles/feiliuzhixia.css" rel="stylesheet">
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/slide_share.css?v=9c50d088.css">
 	<script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -93,7 +92,7 @@
 					</P>
 				</DIV>
 				<DIV class="navbar-text navbar-right">
-				<P>(c)<?php echo date("Y")?>btmilk.com&nbsp;&nbsp;|&nbsp;
+				<P>(c)<?php echo date("Y")?>&nbsp;btmilk.com&nbsp;&nbsp;
 					</P>
 					<P>btmilk磁力搜索引擎，第一好用的磁力搜索引擎</P>
 				</DIV>
