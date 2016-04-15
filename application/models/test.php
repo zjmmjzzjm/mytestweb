@@ -21,7 +21,7 @@ $sql = "";
 $mode = SPH_MATCH_ALL;
 $host = "localhost";
 $port = 9312;
-$index = "*";
+$index = "main";
 $groupby = "";
 $groupsort = "@group desc";
 $filter = "group_id";
@@ -32,6 +32,9 @@ $sortexpr = "";
 $limit = 20;
 $ranker = SPH_RANK_PROXIMITY_BM25;
 $select = "";
+$args =$argv;
+$args[0] = "";
+print_r($args);
 for ( $i=0; $i<count($args); $i++ )
 {
 	$arg = $args[$i];
@@ -67,6 +70,7 @@ for ( $i=0; $i<count($args); $i++ )
 		$q .= $args[$i] . " ";
 }
 
+echo $q;
 ////////////
 // do query
 ////////////

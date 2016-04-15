@@ -39,6 +39,11 @@ var _hmt = _hmt || [];
 			<ul class="nav navbar-nav">
                     <li><a href="/help.html" target="_blank">下载帮助</a></li>
 				</ul>
+				<UL class="nav navbar-nav">
+					<LI>
+						<A href="/index.php/recent" target="_blank">最新资源</A>
+					</LI>
+				</UL>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="" target="_blank">交流求片</a></li>
 				</ul>

@@ -43,6 +43,11 @@
 						<A href="/help.html" target="_blank">下载帮助</A>
 					</LI>
 				</UL>
+				<UL class="nav navbar-nav">
+					<LI>
+						<A href="/index.php/recent" target="_blank">最新资源</A>
+					</LI>
+				</UL>
 				<UL class="nav navbar-nav navbar-right">
 					<LI>
 						<A href="#" target="_blank">交流求片</A>
@@ -53,7 +58,7 @@
 	</NAV>
 	<DIV class="container">
 			<DIV class="col-lg-12">
-			<SPAN class="pull-right" >站内资源总数：<b><?php echo $total ?></b>, 昨日新增：<b><?php echo $yesterday ?></b></SPAN>
+			<SPAN class="pull-right" >站内资源总数：<b><?php echo $total ?></b>, 昨日新增：<b><a href="/index.php/recent"> <?php echo $yesterday ?> </a></b></SPAN>
 			</DIV>
 		<DIV class="jumbotron">
 			<DIV class="container">

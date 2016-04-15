@@ -27,7 +27,6 @@ var _hmt = _hmt || [];
 
 </head>
 <body>
-
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -43,11 +42,6 @@ var _hmt = _hmt || [];
 				<ul class="nav navbar-nav">
                     <li><a href="/help.html" target="_blank">下载帮助</a></li>
 				</ul>
-				<UL class="nav navbar-nav">
-					<LI>
-						<A href="/index.php/recent" target="_blank">最新资源</A>
-					</LI>
-				</UL>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#" target="_blank">交流求片</a></li>
 				</ul>
@@ -57,7 +51,7 @@ var _hmt = _hmt || [];
 	<div class="container" style="padding-right: 60px; padding-left: 60px;">
 		<form action="/index.php/search" id="search_form">
 			<div class="input-group">
-				<input class="form-control" type="text" name="keyword" id="keyword"  value="<?php echo $key; ?>"  placeholder="搜索电影、剧集、动漫、番号、演员..." baiduSug="1" autofocus required>
+				<input class="form-control" type="text" name="keyword" id="keyword"  value=""  placeholder="搜索电影、剧集、动漫、番号、演员..." baiduSug="1" autofocus required>
 				<span class="input-group-btn">
 					<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span>搜索</button>
 				</span>
@@ -69,7 +63,7 @@ var _hmt = _hmt || [];
 			<b>排序方式：</b>
 			<li><a  href="#">创建时间</a></li>
 			<?php if ($datas){ ?>
-			<li>&nbsp;&nbsp;已为您搜索到包含  <font color="red"><?php echo $key?></font> 的 <font color="red"><?php echo $total_found?></font> 个资源 ,耗时<font color="red"> <?php echo $time?></font> 秒。 </li>
+			<li>&nbsp;&nbsp;最新收录 <font color="red"><?php echo $recent_count?></font> 条磁力链接。 </li>
 			<?php } ?>
 		</ol>
 	</div>
@@ -79,11 +73,11 @@ var _hmt = _hmt || [];
 			<div class="col-md-8">
 				<div class="navbar-collapse collapse" style="padding-right: 0px;padding-left: 0px;">
 				</div>
-				<?php if (!$datas) {echo '没有找到您搜索的关键字，换下关键字试试吧!';} else foreach( $datas as $data ) 
+				<?php if (!$datas) {echo '真不巧，还没有最新的资源哦';} else foreach( $datas as $data ) 
 				{ ?>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h5 class="item-title"><a href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo highlight_keywords($data['title'], $words) ?></a></h5>
+						<h5 class="item-title"><a href="/index.php/detail/<?php echo $data['id'];?>" target="_blank"><?php echo $data['title'] ?></a></h5>
 						<table>
 							<tr>
 								<td width="90px"><span class="label label-info"><b><?php echo $data['indexdate'] ?></b></span></td>

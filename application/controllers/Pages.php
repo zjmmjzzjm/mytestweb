@@ -92,6 +92,65 @@
 				$this->load->view('list_view', $data);
 			}
 		}
+		public function recent($key = "")
+		{
+			/*
+			$data["title"] = "";
+			$data['datas'] = array(
+				array(
+					'title' => "this is the title",
+					'infohash' => "12341241241241241241"
+					'size' => 0,
+				),
+				array(
+					'title' => "this is the title",
+					'infohash' => "asdfasdfadfadfadfa"
+					'size' => 0,
+				),
+				array(
+					'title' => "this is the title",
+					'infohash' => "womenshi zong guo reng"
+					'size' => 0,
+				),
+				array(
+					'title' => "this is the title",
+					'infohash' => "hahahahahahhhahhah29370238"
+					'size' => 0,
+				),
+			);
+			 */
+
+			$page = $this->input->get("page");
+			if($page == NULL)
+			{
+				$page = 1;
+			}
+			$this->load->model('mdata');
+			$data = $this->mdata->recent($page);
+/*			echo "<pre>";
+			var_dump($data["datas"]);
+			echo "</pre>";
+ */
+			if($data != NULL)
+			{
+				$data['hotwords'] = $this->mdata->get_hot_words(2);
+				$data['title'] = "最新资源";
+				$data['page'] = $page;
+				$this->load->helper('view_helper');
+				$this->load->view('recent_list_view', $data);
+				$this->load->view('footer', $data);
+			}
+			else
+			{
+				$data = array(
+					'key' => $key,
+					'title'=>$key,
+					'datas'=>array(),
+				);
+				$data['hotwords'] = $this->mdata->get_hot_words(2);
+				$this->load->view('recent_list_view', $data);
+			}
+		}
 	
 		public function detail($id= "")
 		{

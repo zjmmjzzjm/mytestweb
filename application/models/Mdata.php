@@ -44,6 +44,67 @@ class Mdata extends CI_Model
 		}
 
 	}
+	function recent($page)
+	{
+		$torrents = $this->get_torrent_cnt();
+		$torrent_cnt = $torrents['total'];
+		$start_page = $torrent_cnt - $page * $this->show_per_page;
+		$end_page = $torrent_cnt - ($page-1) * $this->show_per_page;
+		if($start_page < 0)
+			$start_page = 0;
+
+
+		$this->db->where("id>=$start_page and id<$end_page");
+		$q = $this->db->get('hash_info');
+		$arr = array();
+		$this->load->helper("date");
+		foreach($q->result() as $row)
+		{
+			$infos = explode("\n", $row->info);
+			$i = 0;
+			$size = $this->make_size($row->size);
+			foreach($infos as $info)
+			{
+				$i++;
+				if($i == 1)	
+					continue;
+				$s = explode(" ", $info);
+				
+			}
+			$t = $row->time;
+			$hash =  $row->hash;
+			$title = $infos[0];
+			$arr[] = array(
+				"title" => $infos[0],
+				"infohash" => $row->hash,
+				"id" => $this->coder->encode($row->id),
+				"info" =>  $hash,
+				"size" => $size,
+				"magnet" => "magnet:?xt=urn:btih:$hash&dn=$title",
+				"indexdate" => datetime("Y-m-d", $t),
+				"detail" => $this->parse_content($row->info, $size, $hash, $t),
+			);
+		}
+		$totalPages = 200;
+		$data = array(
+			'total_page' =>  $totalPages,
+			'time' => 0.001,
+			'datas' => $arr,
+			'recent_count' => $torrents['yesterday'],
+			'key' => "最新资源",
+			'words'=>array_keys(array("最新资源")),
+			'hotwords'=>$this->get_hot_words(),
+		);
+		
+		/*
+		echo "<pre>";
+		var_dump($data);
+		echo "</pre>";
+		 */
+
+		$this->do_statistics();
+		return $data;
+	}
 	function search($key, $page)
 	{
 		$key = urldecode($key);
@@ -237,6 +298,7 @@ class Mdata extends CI_Model
 	}
 	function do_statistics()
 	{
+		return ;
 		$tbl = $this->get_statistic_table();
 		$sql = "CREATE TABLE IF NOT EXISTS  `$tbl`
 			(
@@ -269,8 +331,7 @@ class Mdata extends CI_Model
 	//type=1推荐 2 热门 3最新
 	function get_hot_words($type=1)
 	{
-		$t = strtotime(date("Y-m-d")) - 3600*24;
-		$sql = "select * from hotwords where type=$type and time>$t ";
+		$sql = "select * from hotwords where type=$type order by time desc limit 1";
 		$q = $this->db->query($sql);
 		if($q)
 		{
